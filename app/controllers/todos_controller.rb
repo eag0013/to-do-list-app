@@ -1,16 +1,18 @@
-class TodoController < ApplicationController
-end
+class TodosController < ApplicationController
 
-def index
-@todos = Todo.all
-end
+  def index
+    @todos = Todo.all
+  end
 
-def create
-@todo = Todo.create(todo_params)
-redirect_to '/todo'
-end
+  def create
+    @todo = Todo.create(todo_params)
+    redirect_to '/todo'
+  end
 
-private
-def todo_params
-params.require(:todo).permit(:item)
+  private
+
+  def todo_params
+    params.require(:todo).permit(:item)
+  end
+  
 end
