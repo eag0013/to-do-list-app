@@ -1,8 +1,6 @@
 - @todos.each do |todo|
   ul
- 	  li = todo.item
-end
-
-p = link_to "New", '#'
-p = link_to "Edit", '#'
-p = link_to "Delete", '#'
+    li = todo.item
+    p = link_to "Edit", edit_todo_path(todo)
+	p = link_to "Delete", todo_path(todo), method: :delete
+    p = link_to "New", new_todo_path
